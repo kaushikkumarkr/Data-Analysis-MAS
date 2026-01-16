@@ -1,0 +1,26 @@
+product_id,name,category,subcategory,price,cost,inventory,supplier,rating,reviews_count
+P001,Laptop Pro 15,Electronics,Computers,1299.99,850.00,45,TechCorp,4.8,1245
+P002,Wireless Mouse,Electronics,Accessories,29.99,12.50,320,GadgetHub,4.5,892
+P003,Office Chair,Furniture,Seating,199.99,95.00,78,ComfortPlus,4.3,567
+P004,Standing Desk,Furniture,Desks,549.99,320.00,32,ErgoWorks,4.7,423
+P005,Mechanical Keyboard,Electronics,Accessories,149.99,65.00,156,KeyMaster,4.6,1089
+P006,Monitor 27inch,Electronics,Displays,399.99,240.00,67,ViewTech,4.4,756
+P007,Desk Lamp,Home Office,Lighting,45.99,18.00,234,BrightLife,4.2,345
+P008,Webcam HD,Electronics,Cameras,89.99,35.00,189,StreamPro,4.1,678
+P009,Ergonomic Mouse,Electronics,Accessories,79.99,32.00,145,ComfortTech,4.4,534
+P010,USB Hub,Electronics,Accessories,24.99,8.50,456,ConnectAll,4.0,289
+P011,Laptop Stand,Home Office,Stands,59.99,22.00,167,RiseUp,4.3,412
+P012,Noise Canceling Headphones,Electronics,Audio,299.99,145.00,89,SoundMax,4.7,1567
+P013,File Cabinet,Furniture,Storage,189.99,90.00,45,OfficePro,4.1,234
+P014,Whiteboard,Home Office,Supplies,79.99,30.00,123,WriteRight,4.2,187
+P015,External SSD 1TB,Electronics,Storage,129.99,70.00,234,DataSafe,4.6,890
+P016,Office Supplies Kit,Home Office,Supplies,34.99,15.00,345,AllInOne,4.0,156
+P017,Smart Speaker,Electronics,Audio,99.99,45.00,178,VoiceAssist,4.5,1234
+P018,Desk Organizer,Home Office,Organization,19.99,6.50,567,TidyDesk,4.1,278
+P019,Portable Charger,Electronics,Power,49.99,18.00,289,PowerGo,4.4,567
+P020,Coffee Maker,Appliances,Kitchen,149.99,65.00,67,BrewMaster,4.6,789
+P021,Air Purifier,Appliances,Climate,249.99,120.00,45,CleanAir,4.5,456
+P022,Tablet 10inch,Electronics,Computers,449.99,280.00,89,TabletWorld,4.3,678
+P023,Bookshelf,Furniture,Storage,129.99,55.00,56,ShelfCo,4.2,234
+P024,LED Strip Lights,Home Office,Lighting,12.99,4.50,678,GlowUp,4.0,890
+P025,Wireless Charger,Electronics,Power,39.99,14.00,345,ChargeFast,4.3,567
