@@ -1,9 +1,10 @@
-"""Agent Service - Wrapper for LangGraph agents in Streamlit."""
+"""Agent Service - Wrapper for LangGraph agents in Streamlit with Langfuse tracing."""
 
 import streamlit as st
 from typing import Any, Generator
 from dataclasses import dataclass
 import time
+import os
 
 import sys
 from pathlib import Path
@@ -14,6 +15,15 @@ from src.agents.state import AgentState, TaskType, create_initial_state
 from src.utils.llm_factory import create_chat_model, get_available_backends
 from src.utils.config import get_config
 from src.utils.logging import get_logger
+
+# Langfuse tracing
+try:
+    from langfuse import Langfuse
+    from langfuse.decorators import observe, langfuse_context
+    LANGFUSE_AVAILABLE = True
+except ImportError:
+    LANGFUSE_AVAILABLE = False
+    observe = lambda *args, **kwargs: lambda f: f  # No-op decorator
 
 logger = get_logger("ui.agent_service")
 
@@ -58,6 +68,7 @@ class AgentService:
             logger.info(f"LLM initialized with backend: {backend}")
         return self._llm
     
+    @observe(name="generate_sql")
     def generate_sql(self, query: str, table: str, schema: dict) -> AgentResponse:
         """Generate SQL from natural language using LLM.
         
@@ -69,6 +80,17 @@ class AgentService:
         Returns:
             AgentResponse with generated SQL and reasoning.
         """
+        # Add Langfuse trace metadata
+        if LANGFUSE_AVAILABLE:
+            try:
+                langfuse_context.update_current_trace(
+                    name="DataVault Query",
+                    user_id="streamlit_user",
+                    metadata={"table": table, "query": query},
+                )
+            except Exception:
+                pass  # Langfuse not configured
+        
         start_time = time.time()
         
         # Build context
